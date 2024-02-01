@@ -1,0 +1,76 @@
+/* styles/ProductsToPush.css */
+.products-to-push-container {
+  margin-top: 40px;
+}
+.products-to-push-container h2 {
+  color: #333;
+  font-size: 3rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.productsPush-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+
+.productpush-card {
+  margin: 1rem;
+  border: none;
+  border-radius: 10px;
+  min-width: 300px;
+  height: 100%; /* Set a minimum width for the cards */
+    width: auto; /* Allow cards to grow larger if necessary */
+    flex: 1 1 300px; 
+  color: #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product_infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: .5rem;
+}
+
+.product_infos span {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.price {
+  color: #888 !important;
+}
+
+.productpush-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  /* Set your desired box shadow */
+}
+
+.productpush-card img {
+  width: 100%; 
+  outline: none ;
+}
+
+.productpush-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.productpush-card p {
+  font-size: 1rem;
+  color: #777;  /* Set your desired text color */
+}
+
+@media screen and (max-width: 658px) {
+  .productpush-card {
+      flex-basis: calc(50% - 2rem); /* Set width for two cards per row, considering margin */
+  }
+  .products-to-push-container h2 {
+    font-size: 2rem;
+  }
+}

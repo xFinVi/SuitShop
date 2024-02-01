@@ -1,0 +1,88 @@
+/* AddProduct.css */
+
+.add-product-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #1d155dcd;
+  }
+  
+  .add-product-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .add-product-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Adjust as needed */
+  }
+
+ .form-group input, .form-group
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  font-size: 16px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease; /* Add transition for smooth effect */
+}
+  input:focus,
+select:focus {
+  
+   border: 5px solid #45a049; /* Change the color on focus */
+}
+  
+  label {
+    display: flex;
+    margin-bottom: 5px; /* Adjust as needed */
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px; /* Adjust as needed */
+    font-size: 16px; /* Adjust as needed */
+  }
+  
+  .error-message {
+    color: red;
+  }
+
+  .success-message {
+    font-size: 2rem;
+    color:#45a049;
+  }
+  
+  .add-product-button {
+    background-color: #1db7ff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px; /* Adjust as needed */
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .add-product-button:hover {
+    background-color: #45a049;
+  }
+  

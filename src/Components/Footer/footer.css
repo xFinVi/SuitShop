@@ -1,0 +1,14 @@
+
+.footer {
+  max-width: 100%;
+}
+
+.footer-container {
+    background-color: #303e6b;
+    color: #fff;
+    padding: 20px 0;
+    font-size: .75rem;
+    text-align: center;
+  }
+  
+  

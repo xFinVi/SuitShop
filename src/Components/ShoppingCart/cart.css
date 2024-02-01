@@ -1,0 +1,175 @@
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+.cart-container h3 {
+  font-size: 3rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #2d2d2d;
+}
+.empty-cart-message {
+  padding: 2rem;
+  color: #2d2d2d;
+  background-color: #f6f6f6;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.explore-products-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f1b133;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.explore-products-link:hover {
+  background-color: #4f4f4f;
+}
+
+.cart-items-container {
+  margin-top: 20px;
+  color: #2d2d2d;
+}
+
+.cart-item {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.item-image {
+  flex: 0 0 80px;
+  margin-right: 10px;
+}
+
+.item-image img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.item-info {
+  color: #2d2d2d;
+  flex: 1;
+}
+
+.item-name {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.item-price {
+  font-size: 16px;
+  color: #27ae60;
+}
+
+.item-category {
+  color: #888;
+  font-size: 14px;
+}
+
+.item-description {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Add these styles to your CSS file */
+
+.cart-summary {
+  width: 50%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 16px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.252) 4.95px 4.95px 9.6px;
+}
+
+.cart-summary p {
+  color: #333; /* Text color for paragraphs inside cart summary */
+  margin-bottom: 8px;
+}
+.cart-summary span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+.cart-summary button {
+  width: 100%;
+  background-color: #f9ad0a; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Optional: Add hover styles for the button */
+.cart-summary button:hover {
+  background-color: #555; /* Change this color as needed */
+}
+
+.item-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Add these styles to your CSS file */
+
+/* Style for the label */
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #2d2d2d !important;
+}
+
+/* Style for the select dropdown */
+.qty-input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 16px;
+}
+.qty-input {
+  width: fit-content;
+}
+
+/* Optional: Add hover and focus styles for better user interaction */
+.qty-input:hover,
+.qty-input:focus {
+  border-color: #f9ad0a; /* Change this color as needed */
+  outline: none;
+}
+
+/* Add more styles as needed */
+
+.remove-item span {
+  color: red;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.cart-utilities {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2d2d2d;
+}
