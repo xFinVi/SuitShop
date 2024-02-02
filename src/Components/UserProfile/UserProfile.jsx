@@ -31,11 +31,8 @@ const UserProfile = () => {
 
      const fetchUserOrders = async () => {
       try {
-<<<<<<< HEAD
+
         const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true}, {});
-=======
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true});
->>>>>>> 5b5225197786e6dbc29406af60f8e9c7ea524cc0
         setUserOrders(response.data);
         setLoading(false);
       } catch (error) {
