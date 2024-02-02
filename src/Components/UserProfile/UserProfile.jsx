@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { setUser } from '../../redux/userSlice';
+import { setUser,setOrders } from '../../redux/userSlice';
 import axios from 'axios';
 import Logout from '../Logout/Logout'
 import './userprofile.css'
@@ -31,18 +31,20 @@ const UserProfile = () => {
         setLoading(false);
       }
     }; 
-
-     const fetchUserOrders = async () => {
+    const fetchUserOrders = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true});
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders/${userId}`,{withCredentials:true});
         setUserOrders(response.data);
+        dispatch(setOrders(response.data));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user orders:', error);
         setLoading(false);
       }
     }; 
-  
+    
+
+    
     if (isAuthenticated) {
       fetchUserData();
       fetchUserOrders();
