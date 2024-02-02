@@ -4,7 +4,7 @@ import "./login.css";
 import axios from "axios";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, setLoading } from "../../redux/userSlice";
+import { setUser, setLoading , setOrders } from "../../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -28,10 +28,22 @@ const Login = () => {
         { withCredentials: true }
       );
 
+
       if (response.status === 200) {
         console.log("Logged in user:", response.data);
         console.log(response.data);
         dispatch(setUser(response.data));
+
+        
+      const userData = response.data;
+
+      // Assuming the user object contains an ID field
+
+      const userId = userData.user.user_id;
+
+      const ordersResponse = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders/${userId}`,{withCredentials:true});
+      dispatch(setOrders(ordersResponse.data));
+
         navigate("/");
       } else {
         setError("Invalid email or password");
