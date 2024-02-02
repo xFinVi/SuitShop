@@ -17,7 +17,7 @@ const UserProfile = () => {
   const [modal, setModal] = useState(null);
 
   useEffect(() => {
-    const fetchUserData = async () => {
+   const fetchUserData = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}users/${userId}`, {withCredentials: true});
         setUserData(response.data);
@@ -27,27 +27,23 @@ const UserProfile = () => {
         console.error('Error fetching user data:', error);
         setLoading(false);
       }
-    };
+    }; 
 
-    const fetchUserOrders = async () => {
+     const fetchUserOrders = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders/`, {withCredentials: true});
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true});
         setUserOrders(response.data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user orders:', error);
         setLoading(false);
       }
-    };
-
-
+    }; 
+  
     if (isAuthenticated) {
       fetchUserData();
       fetchUserOrders();
-    }
-    console.log();
-    
-    
+    }    
 
   }, [isAuthenticated]);
 
