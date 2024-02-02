@@ -24,7 +24,7 @@ const Checkout = () => {
         e.preventDefault();
         try {
             // Make a POST request to submit user details and complete the order
-            const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/cart/checkout`, formData, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/cart/checkout`,{}, formData, { withCredentials: true });
             if (response.status === 200) {
                 console.log('Order placed successfully!');
                 // Clear the cart after placing the order

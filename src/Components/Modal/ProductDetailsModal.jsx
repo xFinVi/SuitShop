@@ -7,7 +7,7 @@ const ProductDetailsModal = ({ product, onClose,onAddToCart  }) => {
   return (
     <div className="product-details-modal">
       <div className="details">
-        <img src="/assets/top-view-blueberries-dark-plate.jpg" alt="" />
+       
         <h2>{product.product_name}</h2>
         <p>Price: ${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(
     product.price,

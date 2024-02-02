@@ -36,7 +36,7 @@ const Cart = () => {
         }
         
         if (isAuthenticated) {
-          const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}cart/`, { withCredentials: true });
+          const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}cart/`,{}, { withCredentials: true });
          
     
           const { user_id, products } = response.data;

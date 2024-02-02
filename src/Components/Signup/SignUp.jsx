@@ -19,7 +19,7 @@ const SignUp = () => {
        last_name: lastName,
         email,
         password,
-      });
+      }, {withCredentials:true});
   
       if (response.status === 201) {
         console.log("User created successfully");

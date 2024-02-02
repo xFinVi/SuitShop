@@ -48,7 +48,7 @@ const EditProduct = ({ product, onClose }) => {
 
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_APP_API_URL}products/${product.product_id}`,
+        `${import.meta.env.VITE_APP_API_URL}products/${product.product_id}`, {},
         editedProduct,
         { withCredentials: true } // Include withCredentials option here
       );

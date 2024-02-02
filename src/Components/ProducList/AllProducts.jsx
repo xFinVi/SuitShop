@@ -59,7 +59,7 @@ const AllProducts = () => {
     const defaultQuantity = 1;
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_API_URL}cart/add`,
+        `${import.meta.env.VITE_APP_API_URL}cart/add`, {},
         {
           productId: product.product_id,
           quantity: defaultQuantity,

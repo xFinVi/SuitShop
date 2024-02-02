@@ -50,6 +50,7 @@ const AddProduct = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_APP_API_URL}/products/imageUpload`,
+        {},
         { image: base64EncodedImageStr },
         { withCredentials: true }
       );
@@ -86,10 +87,7 @@ const AddProduct = () => {
         },
         {
           withCredentials: true,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+            }
       );
 
       dispatch(
