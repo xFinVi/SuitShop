@@ -10,6 +10,7 @@ import { FaUser } from "react-icons/fa";
 const UserProfile = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const userId = useSelector((state) => state.user?.value?.user?.user_id);
+  const sessionId = useSelector((state) => state.user); // Retrieve session ID from state
   const dispatch = useDispatch()
   const [userData, setUserData] = useState(null);
   const [userOrders, setUserOrders] = useState([]);
@@ -19,7 +20,9 @@ const UserProfile = () => {
   useEffect(() => {
    const fetchUserData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}users/${userId}`, {withCredentials: true}, {});
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}users/${userId}`  ,   
+        {withCredentials: true});
+        
         setUserData(response.data);
         dispatch(setUser(response.data));
         setLoading(false);
@@ -31,8 +34,7 @@ const UserProfile = () => {
 
      const fetchUserOrders = async () => {
       try {
-
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true}, {});
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}orders`, {withCredentials: true});
         setUserOrders(response.data);
         setLoading(false);
       } catch (error) {
@@ -44,8 +46,9 @@ const UserProfile = () => {
     if (isAuthenticated) {
       fetchUserData();
       fetchUserOrders();
+      console.log(sessionId)
     }    
-
+ 
   }, [isAuthenticated]);
 
   if (!isAuthenticated) {
