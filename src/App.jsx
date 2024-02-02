@@ -12,11 +12,9 @@ import ProductDetailsPage from "./Pages/ProductDetailsPage";
 import Footer from "./Components/Footer/Footer";
 import AddProductPage from "./Pages/AddProductPage";
 import CheckoutPage from "./Pages/CheckoutPage";
-import axios from 'axios';
 
-import { useDispatch, useSelector } from "react-redux";
-import { setUser,setLoading,clearUser } from "./redux/userSlice";
-import { useEffect } from "react";
+import {  useSelector } from "react-redux";
+
 
 const RootLayout = () => {
   const isAdmin = useSelector((state) => state.user && state.user.role === 'admin');
@@ -82,29 +80,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const dispatch = useDispatch();
 
-  useEffect(()=> {
-    const checkLoggedInUser = async () => {
-      try{
-        dispatch(setLoading(true)); 
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}users`, {withCredentials:true});
-        console.log(response);
-        if(response.status==200){
-          dispatch(setUser(response.data));
-        }else if(response.status==401){
-          console.log("NO USER CURRETLY LOGGED IN");
-        }else {
-          console.log("PLEASE LOG IN")
-        }
-      }catch (err) {
-        console.error('NO USER CURRENTLY LOGGED IN,Error checking user login status:', err); // Log the caught error
-      } finally {
-        dispatch(setLoading(false)); // Set loading state back to false after checking
-      }
-    };
-    checkLoggedInUser();
-  },[dispatch])
   return (
     
       <RouterProvider Provider router={router}>
