@@ -59,7 +59,7 @@ const AllProducts = () => {
     const defaultQuantity = 1;
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_API_URL}cart/add`, {},
+        `${import.meta.env.VITE_APP_API_URL}cart/add`,
         {
           productId: product.product_id,
           quantity: defaultQuantity,
@@ -97,6 +97,7 @@ const AllProducts = () => {
             </div>
             <div className="product-information">
             <h3>{product.product_name}</h3>
+      
             <p>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(
     product.price,
   )}</p>
@@ -133,7 +134,7 @@ const AllProducts = () => {
       {modal && (
         <div className="overlay">
           <div className="product-details-modal">
-            <ProductDetailsModal product={modal} onClose={closeModal} onAddToCart={handleAddToCart} />
+            <ProductDetailsModal product={modal} onClose={closeModal}  />
           </div>
         </div>
       )}
