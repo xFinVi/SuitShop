@@ -2,8 +2,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./productdetailsmodal.css";
+import { useDispatch} from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+import axios from 'axios';
 
-const ProductDetailsModal = ({ product, onClose,onAddToCart  }) => {
+const ProductDetailsModal = ({ product, onClose  }) => {
+
+  const dispatch = useDispatch();
+
+
+  const handleAddToCart = async (product) => {
+    const defaultQuantity = 1;
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_API_URL}cart/add`,
+        {
+          productId: product.product_id,
+          quantity: defaultQuantity,
+          name: product.product_name,
+          price: product.price,
+        },
+        { withCredentials: true }
+      );
+
+      const { cartProductId, message } = response.data;
+
+      const productObject = {
+        product_id: product.product_id,
+        quantity: defaultQuantity,
+        name: product.product_name,
+        price: product.price,
+        cart_product_id: cartProductId,
+      };
+
+      dispatch(addToCart(productObject));
+      console.log(message);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="product-details-modal">
       <div className="details">
@@ -21,7 +59,7 @@ const ProductDetailsModal = ({ product, onClose,onAddToCart  }) => {
         </Link>
     
            
-              <button type="submit" onClick={() => onAddToCart(product)}>
+              <button type="submit" onClick={() => handleAddToCart(product)}>
                 Add to cart
               </button>
           
