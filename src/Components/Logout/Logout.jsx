@@ -17,7 +17,8 @@ const Logout = () => {
   
       // Make an API call to your backend to logout
 
-      const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}users/logout`, {},{withCredentials:true});
+    
+      const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}users/logout`);
   
       console.log('Logout response:', response);
   
